@@ -1,44 +1,37 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "title": "Configurar ambiente Angular",
-      "description": "Instalar Angular CLI, Material e Tailwind",
+      "title": "Aprender Reactive Forms",
+      "description": "Criar formulário com validação no Angular",
       "status": "completed",
       "priority": "high",
-      "createdAt": "2026-05-20T00:00:00.000Z"
+      "createdAt": "2026-05-24T00:00:00.000Z",
+      "id": "gkqixr316P4"
     },
     {
-      "id": "2",
-      "title": "Criar estrutura de pastas",
-      "description": "Organizar o projeto em core, shared e features",
-      "status": "completed",
-      "priority": "high",
-      "createdAt": "2026-05-21T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "title": "Implementar dashboard",
-      "description": "Cards de resumo com signals e computed",
-      "status": "in-progress",
-      "priority": "medium",
-      "createdAt": "2026-05-22T00:00:00.000Z"
-    },
-    {
-      "id": "4",
-      "title": "Criar lista de tarefas",
-      "description": "Tabela com filtros e ações",
-      "status": "pending",
-      "priority": "medium",
-      "createdAt": "2026-05-23T00:00:00.000Z"
-    },
-    {
-      "id": "5",
-      "title": "Implementar formulário",
-      "description": "Criar e editar tarefas com Reactive Forms",
+      "title": "Aprender Reactive Forms",
+      "description": "Criar formulário com validação no Angular",
       "status": "pending",
       "priority": "low",
-      "createdAt": "2026-05-24T00:00:00.000Z"
+      "createdAt": "2026-05-24T00:00:00.000Z",
+      "id": "oSBadrfPlmo"
+    },
+    {
+      "title": "Aprender Xadrez",
+      "description": "Criar formulário com validação no Angular",
+      "status": "pending",
+      "priority": "high",
+      "createdAt": "2026-05-24T00:00:00.000Z",
+      "id": "O0IP4vl9rHQ"
+    },
+    {
+      "title": "Aprender Xadrez",
+      "description": "Criar formulário com validação no Angular",
+      "status": "pending",
+      "priority": "high",
+      "createdAt": "2026-05-24T00:00:00.000Z",
+      "id": "j5akQBRAypU"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
