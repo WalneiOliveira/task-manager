@@ -1,33 +1,49 @@
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Total de Tarefas</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p class="text-4xl font-bold mt-4">{{ totalTasks() }}</p>
-    </mat-card-content>
-  </mat-card>
+@if (loading()) {
+  <div class="flex justify-center items-center h-48">
+    <mat-spinner />
+  </div>
+} @else if (error()) {
+  <div class="p-4 bg-red-50 text-red-600 rounded-lg">
+    {{ error() }}
+  </div>
+} @else {
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Pendentes</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p class="text-4xl font-bold mt-4 text-orange-500">{{ pendingTasks() }}</p>
-    </mat-card-content>
-  </mat-card>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Total</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="text-4xl font-bold mt-4">{{ totalTasks() }}</p>
+      </mat-card-content>
+    </mat-card>
 
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Concluídas</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p class="text-4xl font-bold mt-4 text-green-600">{{ completedTasks() }}</p>
-    </mat-card-content>
-  </mat-card>
-</div>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Pendentes</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="text-4xl font-bold mt-4 text-orange-500">{{ pendingTasks() }}</p>
+      </mat-card-content>
+    </mat-card>
 
-<div class="flex gap-4 mt-6">
-  <button mat-raised-button (click)="addTask()">+ Nova Tarefa</button>
-  <button mat-raised-button color="primary" (click)="completeTask()">✓ Concluir Tarefa</button>
-</div>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Em andamento</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="text-4xl font-bold mt-4 text-blue-500">{{ inProgressTasks() }}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Concluídas</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="text-4xl font-bold mt-4 text-green-600">{{ completedTasks() }}</p>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+}

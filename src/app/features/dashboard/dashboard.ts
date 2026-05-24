@@ -1,24 +1,26 @@
-import { Component, signal, computed} from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { TaskService } from '../../core/services/task';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [MatCardModule],
+  imports: [MatCardModule, MatButtonModule, MatProgressSpinnerModule],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css',
+  styleUrl: './dashboard.css'
 })
-export class Dashboard {
-  readonly totalTasks = signal(12);
-  readonly completedTasks = signal(8);
-  readonly pendingTasks = computed(() => this.totalTasks() - this.completedTasks());
+export class Dashboard implements OnInit {
+  private readonly taskService = inject(TaskService);
 
-  completeTask(): void {
-    if (this.completedTasks() < this.totalTasks()) {
-      this.completedTasks.update(v => v + 1);
-    }
-  }
+  readonly totalTasks = this.taskService.totalTasks;
+  readonly completedTasks = this.taskService.completedTasks;
+  readonly pendingTasks = this.taskService.pendingTasks;
+  readonly inProgressTasks = this.taskService.inProgressTasks;
+  readonly loading = this.taskService.loading;
+  readonly error = this.taskService.error;
 
-  addTask(): void {
-    this.totalTasks.update(v => v + 1);
+  ngOnInit(): void {
+    this.taskService.loadTasks();
   }
 }
