@@ -6,8 +6,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   selector: 'app-root',
   imports: [RouterOutlet, MatToolbarModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('task-manager');
+  protected readonly title = signal('Task Manager Pro');
 }
